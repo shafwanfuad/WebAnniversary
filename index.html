@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Anniversary 💗</title>
+
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,600&family=DM+Sans:wght@300;400;500&family=Pacifico&display=swap"
+    rel="stylesheet" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💗</text></svg>" />
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body onclick="heartExplosion(event)">
+  <!-- Layer Decorations -->
+  <div id="scroll-progress"></div>
+  <div id="cur"></div>
+  <div id="cur-ring"></div>
+  <div id="pts"></div>
+  <div id="fh-layer"></div>
+
+  <!-- Navigation -->
+  <nav>
+    <span class="nav-logo">DD-MM-YYYY ♡</span>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#memories">Kenangan</a></li>
+      <li><a href="#reasons">Alasan</a></li>
+      <li><a href="#letter">Surat</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── HERO SECTION ── -->
+  <section id="hero">
+    <div class="hero-orbs">
+      <div class="orb orb1"></div>
+      <div class="orb orb2"></div>
+      <div class="orb orb3"></div>
+    </div>
+
+    <p class="hero-eyebrow">✦ Happy Anniversary ✦</p>
+
+    <div class="film-frame">
+      <div class="film-wrap">
+        <div class="film-sprocket-row">
+          <div class="sprocket"></div>
+          <div class="sprocket"></div>
+          <div class="sprocket"></div>
+          <div class="sprocket"></div>
+          <div class="sprocket"></div>
+          <div class="sprocket"></div>
+          <div class="sprocket"></div>
+          <div class="sprocket"></div>
+          <div class="sprocket"></div>
+        </div>
+        <img class="film-photo" id="hero-photo" src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&q=80&w=800" alt="kita berdua" />
+        <div class="film-sprocket-row bot">
+          <div class="sprocket"></div>
+          <div class="sprocket"></div>
+          <div class="sprocket"></div>
+          <div class="sprocket"></div>
+          <div class="sprocket"></div>
+          <div class="sprocket"></div>
+          <div class="sprocket"></div>
+          <div class="sprocket"></div>
+          <div class="sprocket"></div>
+        </div>
+        <div class="film-meta">
+          <span>LOVE FILM ©2023</span>
+          <span class="fm-heart">♥</span>
+          <span>FRAME 01</span>
+        </div>
+      </div>
+      <div class="hero-badge">
+        <span>Nama Kamu</span>
+        <span>💗</span>
+        <span>Nama Dia</span>
+      </div>
+    </div>
+
+    <h1 class="hero-h1">Untuk Kamu<br><em>Happy</em> <span class="outline">Anniversary</span></h1>
+    <p class="hero-sub">✦ setiap detik bersamamu adalah hadiah ✦</p>
+    <a href="#memories" class="hero-cta">
+      Lihat Kenangan Kita ✨
+    </a>
+  </section>
+
+  <!-- ── LOOPING STRIP ── -->
+  <div id="loop-strip">
+    <div class="strip-row">
+      <div class="strip-track" id="s1"></div>
+    </div>
+    <div class="strip-row">
+      <div class="strip-track rev" id="s2"></div>
+    </div>
+  </div>
+
+  <!-- ── MEMORIES ── -->
+  <section id="memories">
+    <p class="sec-eyebrow">✦ foto kenangan ✦</p>
+    <h2 class="sec-h2">Momen <em>Bersama</em></h2>
+    <p class="sec-sub">klik foto untuk memperbesar — hover untuk caption</p>
+    
+    <!-- Trigger Reveal -->
+    <div id="gallery-box" onclick="revealGallery()">
+      <span class="box-icon">🎁</span>
+      <p style="font-weight: 500; color: var(--rose);">Buka Kotak Kenangan Kita ✨</p>
+    </div>
+
+    <!-- Hidden Content -->
+    <div id="gallery-content" class="gallery-hidden">
+      <div class="heart-frame">
+        <img class="heart-photo" src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=800" alt="momen spesial"
+          onclick="openLB(this.src, 'LOVE 💖')" style="cursor: pointer;" />
+      </div>
+
+      <div class="mag-grid" id="mag-grid"></div>
+    </div>
+  </section>
+  <!-- ── REASONS ── -->
+  <section id="reasons">
+    <p class="sec-eyebrow">✦ dari dalam hati ✦</p>
+    <h2 class="sec-h2">Kenapa Aku <em>Sayang Kamu</em></h2>
+    <p class="sec-sub">tak ada kata cukup untuk menggambarkan semuanya</p>
+    <div class="reasons-wrap" id="reasons-wrap"></div>
+  </section>
+
+  <!-- ── PIXEL WORLD ── -->
+  <section id="pixel-surprise">
+    <div class="pixel-scanline"></div>
+    <div class="decor-item" style="top: 10%; left: 15%">💌</div>
+    <div class="decor-item" style="top: 20%; right: 10%; animation-delay: 1s">🌹</div>
+    <div class="decor-item" style="bottom: 15%; left: 10%; animation-delay: 2s">🧸</div>
+    <div class="decor-item" style="bottom: 25%; right: 15%; animation-delay: 0.5s">💍</div>
+
+    <p class="sec-eyebrow">✦ pixel world ✦</p>
+    <h2 class="sec-h2" style="margin-bottom: 4rem">Kamu di Dunia <em>Pixel</em></h2>
+
+    <div class="pixel-container" onclick="pixelSurpriseAction(event)" onmouseenter="pixelHover(true)"
+      onmouseleave="pixelHover(false)">
+      <div class="pixel-bubble-main" id="pixel-speech">Halo Sayang! 💖</div>
+      <div class="pixel-frame">
+        <img id="main-pixel" class="pixel-img" src="photos/pixel2.jpg" alt="pixel you" />
+      </div>
+      <div
+        style="margin-top: 20px; font-size: 11px; color: var(--gold); letter-spacing: 4px; font-weight: bold; text-shadow: 0 0 10px var(--gold)">
+        KLIK UNTUK KEJUTAN! ✨
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TIMELINE ── -->
+  <section id="timeline">
+    <p class="sec-eyebrow">✦ perjalanan kita ✦</p>
+    <h2 class="sec-h2" style="margin-bottom:.4rem">Cerita <em>Kita</em></h2>
+    <p class="sec-sub" style="margin-bottom:2.5rem">Mulai dari awal bertemu</p>
+    <div class="tl-wrap">
+      <div class="tl-spine"></div>
+      <div class="tl-entry" data-i="0">
+        <div class="tl-dot">🌅</div>
+        <div class="tl-body">
+          <div class="tl-label">awal mula</div>
+          <div class="tl-title">Pertama kali bertemu</div>
+          <div class="tl-desc">Hari di mana takdir mempertemukan kita untuk pertama kalinya.</div>
+        </div>
+      </div>
+      <div class="tl-entry" data-i="1">
+        <div class="tl-dot">💬</div>
+        <div class="tl-body">
+          <div class="tl-label">perasaan tumbuh</div>
+          <div class="tl-title">Mulai Dekat</div>
+          <div class="tl-desc">Momen di mana kita mulai merasa nyaman dan berbagi cerita bersama.</div>
+        </div>
+      </div>
+      <div class="tl-entry" data-i="2">
+        <div class="tl-dot">🌸</div>
+        <div class="tl-body">
+          <div class="tl-label">momen spesial</div>
+          <div class="tl-title">Kenangan Indah</div>
+          <div class="tl-desc">Setiap detik yang kita lalui bersama menjadi memori yang tak terlupakan.</div>
+        </div>
+      </div>
+      <div class="tl-entry" data-i="3">
+        <div class="tl-dot">💝</div>
+        <div class="tl-body">
+          <div class="tl-label">sekarang</div>
+          <div class="tl-title">Kamu Adalah Rumah</div>
+          <div class="tl-desc">Di mana pun aku berada, selama ada kamu, aku merasa telah sampai di rumah yang paling nyaman.</div>
+        </div>
+      </div>
+      <div class="tl-entry" data-i="4">
+        <div class="tl-dot">🌟</div>
+        <div class="tl-body">
+          <div class="tl-label">selamanya</div>
+          <div class="tl-title">Masa Depan Bersama</div>
+          <div class="tl-desc">Membangun mimpi dan menjalani sisa hidup kita dengan penuh kebahagiaan.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LETTER ── -->
+  <section id="letter">
+    <p class="sec-eyebrow">✦ surat cinta ✦</p>
+    <h2 class="sec-h2" style="margin-bottom:2rem">Dari <em>Hatiku</em></h2>
+    <div class="letter-outer">
+      <div class="letter-deco">"</div>
+      <div class="letter-card">
+        <div class="lc-from">Kepada Sayangku,</div>
+        <div class="lc-body" id="typewriter"></div><span class="typing-cursor"></span>
+        <div class="lc-sign">— Dari Aku </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="padding:60px; text-align:center; opacity:0.4; font-size:11px; letter-spacing:3px">
+    DIBUAT DENGAN SEPENUH HATI &copy; <span id="year"></span> ✦ KHUSUS UNTUKMU ✦
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lb">
+    <div class="lb-inner">
+      <img id="lb-img" src="" alt="" />
+      <button class="lb-x" onclick="closeLB()">✕</button>
+      <p id="lb-cap-text"></p>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+
+</html>
